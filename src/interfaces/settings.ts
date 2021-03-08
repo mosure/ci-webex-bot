@@ -1,6 +1,7 @@
 export interface ISettings {
     appName: string;
-    loggingPort: number;
-    loggingHost: string;
+    httpHost: string;
+    httpPort: number;
     testMode: boolean;
+    webexToken: string;
 }

@@ -1,1 +1,1 @@
-export * from './example_controller';
+export * from './ci_endpoint';

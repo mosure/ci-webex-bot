@@ -6,14 +6,16 @@ import { ISettings } from '@app/interfaces';
 @injectable()
 export class MockSettings implements ISettings {
     appName: string;
-    loggingHost: string;
-    loggingPort: number;
+    httpHost: string;
+    httpPort: number;
     testMode: boolean;
+    webexToken: string;
 
     constructor() {
         this.appName = 'example_testing';
-        this.loggingHost = '';
-        this.loggingPort = 0;
+        this.httpHost = '';
+        this.httpPort = 0;
         this.testMode = true;
+        this.webexToken = '';
     }
 }

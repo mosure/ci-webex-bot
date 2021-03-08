@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import cors from 'cors';
+import { Application } from 'express';
 import { ContainerModule, Container } from 'inversify';
 import { cleanUpMetadata , InversifyExpressServer } from 'inversify-express-utils';
 
@@ -7,6 +8,11 @@ cleanUpMetadata();
 
 import '@app/controllers';
 
+
+interface GetAppResult {
+    app: Application;
+    container: Container;
+}
 
 export default (bindings: ContainerModule) => {
 
@@ -24,5 +30,8 @@ export default (bindings: ContainerModule) => {
 
     const expressApp = app.build();
 
-    return expressApp;
+    return {
+        app: expressApp,
+        container: container,
+    };
 };

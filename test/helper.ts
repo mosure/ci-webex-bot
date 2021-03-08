@@ -8,5 +8,8 @@ import { test_bindings } from '@test/mock.inversify.config';
 
 // Construct application once, globally
 before(async function() {
-    this.app = request(get_app(test_bindings));
+    const build_app_res = get_app(test_bindings);
+
+    // Init the database before running tests
+    this.app = request(build_app_res.app);
 });

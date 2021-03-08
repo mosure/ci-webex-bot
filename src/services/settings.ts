@@ -6,13 +6,15 @@ import { ISettings } from '@app/interfaces';
 @injectable()
 export class Settings implements ISettings {
     appName: string;
-    loggingHost: string;
-    loggingPort: number;
+    httpHost: string;
+    httpPort: number;
     testMode = false;
+    webexToken: string;
 
     constructor() {
         this.appName = process.env.APP_NAME || '';
-        this.loggingHost = process.env.LOGGING_HOST || '';
-        this.loggingPort = +(process.env.LOGGING_PORT || '');
+        this.httpHost = process.env.HOST || '127.0.0.1';
+        this.httpPort = +(process.env.PORT || 9874);
+        this.webexToken = process.env.TOKEN || '';
     }
 }

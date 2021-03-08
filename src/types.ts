@@ -1,6 +1,7 @@
 const TYPES = {
+    Bots: Symbol('Bots'),
+    Logger: Symbol('Logger'),
     Settings: Symbol('Settings'),
-    Logger: Symbol('Logger')
 };
 
 export default TYPES;
